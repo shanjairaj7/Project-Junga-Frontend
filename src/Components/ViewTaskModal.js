@@ -320,7 +320,6 @@ const ViewTaskModal = ({ isOpen, onClose }) => {
                                 </Flex>
 
                                 <Text fontSize="x-small">
-                                  <Text color="gray.500">Created at</Text>
                                   <Text color="gray.600">{formatDate(comment.createdAt)}</Text>
                                 </Text>
                               </Flex>

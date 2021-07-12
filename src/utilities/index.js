@@ -17,19 +17,14 @@ export const showDynamicStatusBadge = (status) => {
 
 export const formatDate = (date) => {
   const newDate = new Date(date);
-  const formattedDate = format(newDate, "dd/MM/yyyy");
+  const formattedDate = format(newDate, "dd/MM/yyyy hh:mm aa");
 
   return formattedDate;
 };
 
 export const formatLongText = (longText, limit) => {
   if (longText.length > limit) {
-    return (
-      <Tooltip label={longText}>{`${longText.substring(
-        0,
-        limit - 10
-      )}...`}</Tooltip>
-    );
+    return <Tooltip label={longText}>{`${longText.substring(0, limit - 10)}...`}</Tooltip>;
   }
 
   return longText;

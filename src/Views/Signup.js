@@ -16,7 +16,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { signUp, user } from "../services/userService";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { setUser } from "../reduxSlices/userSlice";
 import { useDispatch } from "react-redux";
 
@@ -97,8 +97,8 @@ const Signup = () => {
           Sign Up
         </Heading>
         <Text textAlign="center" color="gray.500" pb="6">
-          We are glad that you will be using Project Junga to manage your tasks!
-          We hope that you will get like it.
+          We are glad that you will be using Project Junga to manage your tasks! We hope that you
+          will get like it.
         </Text>
 
         <form onSubmit={(e) => signUpAPI(e)}>
@@ -132,10 +132,7 @@ const Signup = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
               <InputRightElement si width="4.5rem">
-                <Button
-                  size="sm"
-                  onClick={() => setShowPassword(!showPassword)}
-                >
+                <Button size="sm" onClick={() => setShowPassword(!showPassword)}>
                   {showPassword ? "Hide" : "Show"}
                 </Button>
               </InputRightElement>
@@ -156,6 +153,14 @@ const Signup = () => {
             Sign Up
           </Button>
         </form>
+
+        {/* Show link to sign up */}
+        <Flex align="center" justify="center" mt="4" color="gray.500">
+          <Text>Already have an account?</Text>{" "}
+          <Text ml="2" color="gray.600" textDecoration="underline">
+            <Link to="/signin">Log In</Link>
+          </Text>
+        </Flex>
       </Box>
     </Center>
   );
